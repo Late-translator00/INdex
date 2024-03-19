@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set character encoding and viewport for responsive design -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Title of the page -->
+    <title>Colorful Calculator</title>
+
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" type="text/css" href="calculator.css">
+    <!-- Link to external JavaScript file for functionality -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="calculator.js"></script>
+
+    <!-- External link to additional stylesheet (Note: Might need further context for this link) -->
+    <link rel="stylesheet" href="/NJvk7pZ0wtci1Ud_"/>
+</head>
+<body style="background-color: #f5f5f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+    <!-- Container for the calculator -->
+    <div class="container" style="background-color: #ffffff; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px; text-align: center; max-width: 300px; margin: 20px auto;">
+        
+        <!-- Display input field for calculator -->
+        <input type="text" id="display" readonly style="width: 100%; padding: 10px; font-size: 20px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px;">
+
+        <!-- Buttons for numbers -->
+        <div class="buttons" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 10px;">
+            <button type="button" onclick="addValue(7)" style="background-color: #3498db; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">7</button>
+            <button type="button" onclick="addValue(8)" style="background-color: #3498db; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">8</button>
+            <button type="button" onclick="addValue(9)" style="background-color: #3498db; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">9</button>
+
+            <button type="button" onclick="addValue(4)" style="background-color: #3498db; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">4</button>
+            <button type="button" onclick="addValue(5)" style="background-color: #3498db; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">5</button>
+            <button type="button" onclick="addValue(6)" style="background-color: #3498db; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">6</button>
+
+            <button type="button" onclick="addValue(1)" style="background-color: #3498db; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">1</button>
+            <button type="button" onclick="addValue(2)" style="background-color: #3498db; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">2</button>
+            <button type="button" onclick="addValue(3)" style="background-color: #3498db; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">3</button>
+            <button type="button" onclick="addValue(0)" style="background-color: #3498db; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">0</button>
+        </div>
+        
+        <!-- Buttons for mathematical symbols -->
+        <div class="symbols" style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 10px;">
+            <button type="button" onclick="addValue('+')" style="background-color: #2ecc71; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">+</button>
+            <button type="button" onclick="addValue('-')" style="background-color: #2ecc71; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">-</button>
+            <button type="button" onclick="addValue('/')" style="background-color: #2ecc71; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">÷</button>
+            <button type="button" onclick="addValue('*')" style="background-color: #2ecc71; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">x</button>
+        </div>
+
+        <!-- Clear button -->
+        <br>
+        <button type="button" onclick="clearDisplay()" style="background-color: #e74c3c; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">Clear</button>
+        <br>
+        <br>
+        <!-- Equals button -->
+        <button type="button" onclick="result()" style="background-color: #2ecc71; color: #fff; padding: 15px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer;">=</button>
+    </div>
+
+
+    <!-- Container for the history of calculations -->
+    <div class="history-container">
+        <h2>History of Calculations</h2>
+        <!-- Display area for calculation history -->
+        <div><textarea id="display2" readonly></textarea></div>
+    </div>
+     <!-- Navigation bar fixed to the bottom with light background color -->
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+    <!-- Home link with a home icon -->
+    <a class="navbar-brand" href="index.html">
+      <i class="fas fa-home h1"></i>
+    </a>
+    
+    <!-- Tips link with a cash coin icon -->
+    <a class="navbar-brand" href="tips.html">
+      <i class="bi bi-cash-coin h1"></i>
+    </a>
+    
+    <!-- Dice link with a dice icon -->
+    <a class="navbar-brand" href="dice.html">
+      <i class="bi bi-dice-2 h1"></i>
+    </a>
+    
+    <!-- Calculator link with a calculator icon -->
+    <a class="navbar-brand" href="calculator.html">
+      <i class="fas fa-calculator h1"></i>
+    </a>
+  </nav>
+    
+</body>
+</html>
